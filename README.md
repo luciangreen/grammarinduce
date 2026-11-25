@@ -1,6 +1,6 @@
 # grammarinduce
 
-learn a grammar from example sentences and parse with it as a DCG. Each word is filed under the slot it filled (sentence length and position); a sentence is in the language when its length was seen and each word was seen in its slot. Words that share exactly the same slots form a category. The grammar always parses every training sentence, every entry is needed by some sentence, and the order of the examples does not matter. C = [[slot(3,1)]-[a, the], [slot(3,2)]-[cat, dog], [slot(3,3)]-[runs, sleeps]]
+learn a grammar from example sentences and parse with it as a DCG. Each word is filed under the slot it filled (sentence length and position); a sentence is in the language when its length was seen and each word was seen in its slot. Words that share exactly the same slots form a category. The grammar always parses every training sentence, every entry is needed by some sentence, and the order of the examples does not matter.
 
 ## Use
 
@@ -8,6 +8,7 @@ learn a grammar from example sentences and parse with it as a DCG. Each word is 
 ?- use_module(prolog/grammarinduce).
 ?- induce([[the, cat, sleeps], [a, dog, runs]], G), parses(G, [the, dog, runs]).   % true
 ?- induce([[the, cat, sleeps], [a, dog, runs]], G), categories(G, C).
+%  C = [[slot(3,1)]-[a, the], [slot(3,2)]-[cat, dog], [slot(3,3)]-[runs, sleeps]]
 ```
 
 ## Proofs
